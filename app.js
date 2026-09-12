@@ -94,7 +94,7 @@ addEventListener("scroll", () => {
 
 /* ---------- 모달 ---------- */
 const overlay = document.querySelector("[data-overlay]");
-const steps = { 1: 0, 2: 0, 3: 0 };
+const steps = { 1: 0, 2: 0 };
 for (const n in steps) steps[n] = document.querySelector(`[data-step="${n}"]`);
 let platform = "";
 
@@ -140,12 +140,5 @@ document.querySelector("[data-email-form]").addEventListener("submit", e => {
   email = e.target.email.value.trim();
   track("lead", { platform });
   save({ email, platform });
-  show(2);                                            // 가격 질문은 이메일 확보 후에만
-});
-
-document.querySelector("[data-prices]").addEventListener("change", e => {
-  const price = e.target.value;
-  track("price_answer", { price, platform });
-  save({ email, platform, price });
-  show(3);
+  show(2);
 });

@@ -82,13 +82,6 @@ input[type=email]{
   background:var(--bg); border:1px solid var(--line); border-radius:12px; color:var(--fg);
 }
 input[type=email]:focus{outline:none; border-color:var(--accent)}
-.prices{display:flex; flex-direction:column; gap:8px; margin-top:16px}
-.prices label{
-  display:flex; align-items:center; gap:10px; padding:14px;
-  border:1px solid var(--line); border-radius:12px; cursor:pointer; font-size:15px;
-}
-.prices label:has(:checked){border-color:var(--accent); color:var(--accent)}
-.prices input{accent-color:var(--accent); width:18px; height:18px}
 
 @media (min-width:600px){
   h1{font-size:38px} h2{font-size:32px}
