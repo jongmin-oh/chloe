@@ -1,0 +1,100 @@
+:root{
+  --bg:#0e0d12; --fg:#f2f0ee; --dim:#9a958f; --line:#2a2830;
+  --accent:#e8734a; --card:#171520;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard",
+    "Noto Sans KR","Malgun Gothic",sans-serif;
+  line-height:1.6; word-break:keep-all;
+}
+h1,h2,h3{margin:0 0 12px; line-height:1.3; letter-spacing:-.02em}
+p{margin:0 0 12px}
+
+.screen{padding:56px 20px; max-width:560px; margin:0 auto}
+.hero{min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding-top:40px}
+h1{font-size:30px; font-weight:800}
+h2{font-size:26px; font-weight:800}
+.sub{font-size:17px; color:var(--fg); font-weight:600}
+.body{font-size:15px; color:var(--dim); white-space:pre-line}
+
+/* 이미지 목업 */
+.mock{
+  border:1px dashed var(--line); border-radius:14px; background:var(--card);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:16px; gap:6px; color:var(--dim);
+}
+.mock-hero{aspect-ratio:4/5; width:100%; margin:20px 0 28px}
+.mock .tag{
+  font-size:11px; letter-spacing:.08em; color:var(--accent);
+  border:1px solid var(--accent); border-radius:99px; padding:2px 10px;
+}
+.mock .desc{font-size:13px; color:var(--fg); margin:0; max-width:34ch}
+.mock .size{font-size:11px; color:var(--dim); margin:0; font-variant-numeric:tabular-nums}
+
+/* CTA */
+.cta{display:flex; flex-direction:column; gap:10px}
+.btn{
+  font:inherit; font-weight:700; font-size:16px; color:var(--fg);
+  background:transparent; border:1.5px solid var(--fg); border-radius:12px;
+  padding:16px; cursor:pointer; width:100%;
+}
+.btn:active{transform:scale(.985)}
+.btn-primary{background:var(--accent); border-color:var(--accent); color:#fff}
+.ai-note{margin-top:16px; font-size:12px; color:var(--dim); text-align:center}
+
+/* 2스크린 채팅 목업 */
+.chats{padding-left:0; padding-right:0}
+.chat-rail{
+  display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory;
+  padding:0 20px 8px; -webkit-overflow-scrolling:touch;
+}
+.chat-rail::-webkit-scrollbar{display:none}
+.chat-item{flex:0 0 74%; max-width:280px; scroll-snap-align:center}
+.chat-item .mock{aspect-ratio:9/19.5}
+.caption{font-size:14px; font-weight:600; margin:12px 2px 0}
+.num{color:var(--accent); font-size:12px; font-weight:700; display:block; margin-bottom:4px}
+
+footer{padding:28px 20px 40px; text-align:center; color:var(--dim); font-size:12px; border-top:1px solid var(--line)}
+
+/* 모달 */
+.overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.72); z-index:10;
+  display:flex; align-items:flex-end; justify-content:center; padding:0;
+}
+.modal{
+  background:var(--card); border-radius:20px 20px 0 0; padding:28px 20px 32px;
+  width:100%; max-width:480px; position:relative;
+  animation:up .22s ease-out;
+}
+@keyframes up{from{transform:translateY(24px); opacity:0}}
+.modal h3{font-size:21px}
+.modal p{font-size:14px; color:var(--dim)}
+.close{
+  position:absolute; top:10px; right:12px; background:none; border:0;
+  color:var(--dim); font-size:26px; line-height:1; cursor:pointer; padding:6px;
+}
+input[type=email]{
+  font:inherit; width:100%; padding:15px; margin:16px 0 10px;
+  background:var(--bg); border:1px solid var(--line); border-radius:12px; color:var(--fg);
+}
+input[type=email]:focus{outline:none; border-color:var(--accent)}
+.prices{display:flex; flex-direction:column; gap:8px; margin-top:16px}
+.prices label{
+  display:flex; align-items:center; gap:10px; padding:14px;
+  border:1px solid var(--line); border-radius:12px; cursor:pointer; font-size:15px;
+}
+.prices label:has(:checked){border-color:var(--accent); color:var(--accent)}
+.prices input{accent-color:var(--accent); width:18px; height:18px}
+
+@media (min-width:600px){
+  h1{font-size:38px} h2{font-size:32px}
+  .cta{flex-direction:row}
+  .overlay{align-items:center; padding:20px}
+  .modal{border-radius:20px}
+  .chat-item{flex:0 0 240px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
