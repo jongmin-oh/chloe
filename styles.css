@@ -50,7 +50,8 @@ h2{font-size:26px; font-weight:800}
   background:rgba(14,13,18,.92); backdrop-filter:blur(12px);
   border-top:1px solid var(--line);
 }
-.cta-fixed .btn{font-size:15px; padding:14px 8px; white-space:nowrap; background:var(--bg); max-width:260px}
+.cta-fixed .btn{flex:1 1 0; width:auto; min-width:0; max-width:220px;
+  font-size:15px; padding:14px 6px; white-space:nowrap; background:var(--bg)}
 body{padding-bottom:96px}
 .ai-note{margin-top:16px; font-size:12px; color:var(--dim); text-align:center}
 
@@ -70,6 +71,27 @@ body{padding-bottom:96px}
 .proof-item{border-top:1px solid var(--line); padding:18px 0}
 .proof-item .stat{font-size:19px; font-weight:800; color:var(--accent); margin:0 0 6px}
 .proof-item .label{font-size:14px; margin:0 0 6px}
+/* 지식그래프 */
+.graph{margin:24px 0 0}
+.graph svg{width:100%; height:auto; display:block}
+.graph .edge{stroke:var(--line); stroke-width:1}
+.graph .edge.strong{stroke:var(--accent); stroke-opacity:.5}
+.graph .edge.faint{stroke:var(--line); stroke-opacity:.45}
+.graph .dot{fill:var(--dim); opacity:.6}
+.graph .leaf{fill:var(--dim)}
+.graph .hub{fill:var(--card); stroke:var(--dim); stroke-width:1.5}
+.graph .core{fill:var(--accent)}
+.graph .halo{fill:var(--accent); opacity:.18; animation:breathe 3.4s ease-in-out infinite}
+@keyframes breathe{50%{r:34px; opacity:.05}}
+.graph text{
+  fill:var(--fg); font-size:13px; font-weight:600; text-anchor:middle;
+  paint-order:stroke; stroke:var(--bg); stroke-width:3.5px; stroke-linejoin:round; /* 선·점 위에서도 읽히게 */
+}
+.graph .t-sm{fill:var(--dim); font-size:11px; font-weight:400}
+.graph .t-rel{fill:var(--accent); font-size:9.5px; font-weight:400; opacity:.85}
+.graph .t-core{fill:#fff; font-size:15px; font-weight:700}
+.graph figcaption{margin-top:10px; font-size:11px; color:var(--dim); text-align:center}
+
 .proof-close{margin-top:22px; color:var(--fg); font-weight:600}
 .proof-item .src{font-size:11px; color:var(--dim); margin:0}
 
