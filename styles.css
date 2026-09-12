@@ -44,6 +44,14 @@ h2{font-size:26px; font-weight:800}
 }
 .btn:active{transform:scale(.985)}
 .btn-primary{background:var(--accent); border-color:var(--accent); color:#fff}
+.cta-fixed{
+  position:fixed; left:0; right:0; bottom:0; z-index:5; flex-direction:row; justify-content:center;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  background:rgba(14,13,18,.92); backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);
+}
+.cta-fixed .btn{font-size:15px; padding:14px 8px; white-space:nowrap; background:var(--bg); max-width:260px}
+body{padding-bottom:96px}
 .ai-note{margin-top:16px; font-size:12px; color:var(--dim); text-align:center}
 
 /* 2스크린 채팅 목업 */
