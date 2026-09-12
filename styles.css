@@ -18,7 +18,7 @@ p{margin:0 0 12px}
 .hero{min-height:100svh; display:flex; flex-direction:column; justify-content:center; padding-top:40px}
 h1{font-size:30px; font-weight:800}
 h2{font-size:26px; font-weight:800}
-.sub{font-size:17px; color:var(--fg); font-weight:600}
+.sub{font-size:17px; color:var(--fg); font-weight:600; white-space:pre-line}
 .body{font-size:15px; color:var(--dim); white-space:pre-line}
 
 /* 이미지 목업 */
