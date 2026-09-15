@@ -126,6 +126,7 @@ input[type=email]{
   background:var(--bg); border:1px solid var(--line); border-radius:12px; color:var(--fg);
 }
 input[type=email]:focus{outline:none; border-color:var(--accent)}
+.privacy-note{font-size:11.5px; color:var(--dim); text-align:center; margin:10px 0 0; line-height:1.4}
 
 @media (min-width:600px){
   h1{font-size:38px} h2{font-size:32px}
@@ -216,4 +217,47 @@ ul.day li::before{content:""; position:absolute; left:-25px; top:6px; width:9px;
 
 @media (min-width:900px){
   .cards{grid-template-columns:repeat(3,1fr)}
+}
+
+/* 영상 미리보기 */
+.video-section{text-align:center}
+.video-section .kicker{margin:0 auto 10px}
+.video-section h2{margin-bottom:8px}
+.video-section .lead{margin:0 auto 24px; max-width:420px}
+.video-card{
+  position:relative; width:100%; max-width:320px; aspect-ratio:9/16;
+  margin:0 auto; border-radius:18px; overflow:hidden;
+  background:#000; border:1px solid var(--line);
+  box-shadow:0 12px 32px rgba(0,0,0,.45);
+}
+.video-poster{
+  position:absolute; inset:0; cursor:pointer; display:block; width:100%; height:100%;
+}
+.video-poster img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform .3s ease, filter .3s ease;
+}
+.video-card:hover .video-poster img{
+  transform:scale(1.025); filter:brightness(1.05);
+}
+.video-play-btn{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:60px; height:60px; border-radius:50%;
+  background:var(--accent); color:#fff; border:0; cursor:pointer;
+  display:grid; place-items:center;
+  box-shadow:0 6px 20px rgba(232,115,74,.45);
+  transition:transform .2s ease, background-color .2s ease;
+  padding:0 0 0 3px;
+}
+.video-card:hover .video-play-btn{
+  transform:translate(-50%,-50%) scale(1.08);
+}
+.video-badge{
+  position:absolute; bottom:12px; right:12px;
+  background:rgba(0,0,0,.75); backdrop-filter:blur(4px);
+  color:#fff; font-size:11px; font-weight:700;
+  padding:3px 8px; border-radius:6px; letter-spacing:.04em;
+}
+.video-card iframe{
+  width:100%; height:100%; border:0; display:block;
 }

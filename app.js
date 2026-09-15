@@ -89,3 +89,18 @@ document.querySelectorAll(".faq details").forEach(d => {
     if (d.open) track("faq_open", { question: d.querySelector("summary").textContent.trim() });
   });
 });
+
+/* ---------- 영상 재생 ---------- */
+document.querySelectorAll(".video-card").forEach(card => {
+  card.addEventListener("click", () => {
+    const id = card.dataset.videoId;
+    if (!id || card.classList.contains("playing")) return;
+    track("video_play", { video_id: id });
+    card.classList.add("playing");
+    card.innerHTML = `
+      <iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&playsinline=1&rel=0"
+              title="Chloe 소개 영상"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>`;
+  });
+});
