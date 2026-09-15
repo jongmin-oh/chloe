@@ -97,10 +97,17 @@ document.querySelectorAll(".video-card").forEach(card => {
     if (!id || card.classList.contains("playing")) return;
     track("video_play", { video_id: id });
     card.classList.add("playing");
+
+    const origin = (window.location.origin && window.location.origin !== "null" && !window.location.origin.startsWith("file"))
+      ? `&origin=${encodeURIComponent(window.location.origin)}`
+      : "";
+
     card.innerHTML = `
-      <iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&playsinline=1&rel=0"
+      <iframe src="https://www.youtube.com/embed/${id}?autoplay=1&playsinline=1&rel=0&enablejsapi=1${origin}"
               title="Chloe 소개 영상"
+              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen></iframe>`;
   });
 });
