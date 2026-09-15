@@ -2,7 +2,7 @@
 
 // 이메일 수집 엔드포인트 (구글 시트 Apps Script / Airtable / Formspree URL).
 // 비워두면 콘솔에만 남고 화면 흐름은 그대로 진행됩니다.
-const ENDPOINT = "";
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbzH-GXYe8W4wyGLdxa8gQJW9WcO1nsaa60BnkDK5mWKIt8xcWGSulmtljB2uIdnfq2T/exec";
 
 const params = new URLSearchParams(location.search);
 
