@@ -81,3 +81,11 @@ document.querySelector("[data-email-form]").addEventListener("submit", e => {
   save({ email: e.target.email.value.trim(), platform });
   show(2);
 });
+
+/* ---------- FAQ ---------- */
+// 어떤 질문이 실제로 궁금한지가 카피 개선의 재료가 됩니다.
+document.querySelectorAll(".faq details").forEach(d => {
+  d.addEventListener("toggle", () => {
+    if (d.open) track("faq_open", { question: d.querySelector("summary").textContent.trim() });
+  });
+});
